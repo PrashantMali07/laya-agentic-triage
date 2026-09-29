@@ -10,6 +10,9 @@ import torch
 from .config import get_settings
 from .schemas import ClassificationResult
 
+import warnings
+warnings.filterwarnings("ignore", message=".*ships invalid temperatures.*")
+
 
 settings = get_settings()
 

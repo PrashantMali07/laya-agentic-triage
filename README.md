@@ -122,3 +122,26 @@ The main ingestion endpoint. It executes the LangGraph workflow asynchronously t
 
 **Response Body (`IncidentResponse`)**
 Returns the final route taken, the detailed classification scores from Laya, and the final response/action string.
+
+## Directory Structure
+
+```text
+laya-agentic-triage/
+├── pyproject.toml
+├── src/
+│   └── laya_agentic_triage/
+│       ├── __init__.py        # App entrypoint
+│       ├── api.py             # FastAPI routes
+│       ├── config.py          # Settings and environment
+│       ├── graph.py           # LangGraph state machine definition
+│       ├── laya_engine.py     # System-1 Laya integration
+│       ├── llm.py             # System-2 Groq/Ollama integration
+│       ├── main.py            # FastAPI application setup
+│       ├── prompts.py         # LLM Prompt templates
+│       ├── schemas.py         # Pydantic data models
+│       ├── state.py           # LangGraph TypedDict state
+│       └── scripts/
+│           ├── __init__.py
+│           └── test_graph.py  # Evaluation script
+└── README.md
+```
